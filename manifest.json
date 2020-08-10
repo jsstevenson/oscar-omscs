@@ -1,0 +1,20 @@
+{
+    "manifest-version": 2,
+    "name": "Oscar-OMSCS",
+    "version": "0.1",
+
+    "description": "Make GT OSCAR cleaner for OMSCS students",
+    "homepage_url": "https://jsstevenson.github.io",
+    "icons": {
+        "48": "icons/TODO.png"
+    },
+
+    "permissions": [
+        "activeTab"
+    ],
+
+    "browser-action": {
+        "default-icon": "icons/TODO.png",
+        "default-title": "Oscar-OMSCS"
+    }
+}
