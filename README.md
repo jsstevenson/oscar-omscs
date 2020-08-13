@@ -2,7 +2,7 @@
 
 v 0.1
 
-Hides all non-OMSCS classes in OSCAR Advanced Course Lookup interface.
+Hides all non-OMSCS classes in [OSCAR](https://oscar.gatech.edu/pls/bprod/twbkwbis.P_GenMenu?name=bmenu.P_StuMainMnu) Advanced Course Lookup interface.
 
 ## Installation
 
