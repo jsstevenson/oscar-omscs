@@ -44,13 +44,21 @@ function iterateTable(table) {
         if (table[i].children.length > 0 && table[i].children[0].classList.length > 0 && table[i].children[0].classList[0] === "dddefault") {
             if (!isOMSCS(table[i])) {
                 table[i].setAttribute("style", "display:none");
-            } else if (table[i].children.length > 1 && table[i].children[0].classList[0] === "ddheader") {
-                console.log("here");
-                table[i].children[5].setAttribute("style", "display:none");
             }
             else {
                 colorRow(table[i]);
             }
+        }
+        if (table[i].children.length > 19) {
+            console.log(table[i].children[3].textContent);
+            table[i].children[4].setAttribute("style", "display:none");
+            table[i].children[5].setAttribute("style", "display:none");
+            table[i].children[6].setAttribute("style", "display:none");
+            table[i].children[7].setAttribute("style", "display:none");
+            table[i].children[9].setAttribute("style", "display:none");
+            table[i].children[10].setAttribute("style", "display:none");
+            table[i].children[18].setAttribute("style", "display:none");
+            table[i].children[19].setAttribute("style", "display:none");
         }
     }
 }
