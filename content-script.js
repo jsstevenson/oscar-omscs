@@ -44,18 +44,46 @@ function iterateTable(table) {
         if (table[i].children.length > 0 && table[i].children[0].classList.length > 0 && table[i].children[0].classList[0] === "dddefault") {
             if (!isOMSCS(table[i])) {
                 table[i].setAttribute("style", "display:none");
-            } else {
+            } else if (table[i].children.length > 1 && table[i].children[0].classList[0] === "ddheader") {
+                console.log("here");
+                table[i].children[5].setAttribute("style", "display:none");
+            }
+            else {
                 colorRow(table[i]);
             }
         }
     }
 }
 
+function hideInstructions() {
+    let hidden = false;
+    let infoDiv = document.getElementsByClassName("infotextdiv")[0];
+    let button;
+
+    function toggleInstructions() {
+        if (hidden) {
+            // show it
+            hidden = false;
+            infoDiv.setAttribute("style", "display:visible");
+            button.textContent = "Hide registration instructions";
+        } else {
+            // hide it
+            hidden = true;
+            infoDiv.setAttribute("style", "display:none");
+            button.textContent = "Show registration instructions";
+        }
+    }
+
+    button = document.createElement("button");
+    button.type = "button";
+    document.getElementsByClassName("pagetitlediv")[0].after(button);
+    toggleInstructions();
+    button.addEventListener("click", toggleInstructions);
+}
+
 function cleanPage() {
-    document.getElementsByClassName("pic")[0].setAttribute("style", "display:none");
-    let table = document.getElementsByClassName('datadisplaytable')[0];
-    let tableBody = table.children[1];
-    let rows = tableBody.children;
+    hideInstructions();
+    let rows = document.getElementsByClassName("datadisplaytable")[0].children[1].children;
     iterateTable(rows);
 }
 
