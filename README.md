@@ -1,6 +1,6 @@
 # OSCAR-OMSCS
 
-Tool for hiding unnecessary content in OSCAR interface for OMSCS students.
+Hides all non-OMSCS classes in OSCAR Advanced Course Lookup interface.
 
 ## Installation
 
