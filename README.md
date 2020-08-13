@@ -1,5 +1,7 @@
 # OSCAR-OMSCS
 
+v 0.1
+
 Hides all non-OMSCS classes in OSCAR Advanced Course Lookup interface.
 
 ## Installation
@@ -12,9 +14,11 @@ For now, you can use this extension by [loading it locally](https://extensionwor
 
 Within the OSCAR interface, click on "Look Up Classes" and then click on "Advanced Search". Select all subjects (departments) of interest - for OMSCS students, this would be, at most, "Computational Science & Engr", "Computer Science", "Industrial & Systems Engr", and "Public Policy". Click the "Section Search" button (no need to select "Online" for Campus). You should arrive at this page:
 
-![screenshot of oscar course lookup listing](/docs/oscar-screenshot.png?raw=true)
+![screenshot of oscar course lookup listing](/docs/oscar-screenshot1.png?raw=true)
 
-Clicking the "O" icon in your Firefox toolbar will hide that gigantic image and all non-OMSCS classes, but should not otherwise impact the function of this interface.
+Clicking the "O" icon in your Firefox toolbar (top-right in the above screenshot) will hide that gigantic image and all non-OMSCS classes, but should not otherwise impact the function of this interface. You should end up with something like this:
+
+![screenshot of cleaned oscar course lookup listing](/docs/oscar-screenshot2.png?raw=true)
 
 ## Comments/Issues
 
