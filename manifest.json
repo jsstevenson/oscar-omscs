@@ -5,7 +5,7 @@
   "description": "Make GT OSCAR cleaner for OMSCS students",
   "homepage_url": "http://jsstevenson.github.io",
   "icons": {
-    "48": "icons/bookmark-it.png"
+    "48": "icons/icon48.png"
   },
 
   "permissions": [
@@ -14,7 +14,7 @@
   ],
 
   "browser_action": {
-    "default_icon": "icons/todo.png",
+    "default_icon": "icons/icon32.png",
     "default_title": "Clean OSCAR"
   },
 

@@ -1,13 +1,9 @@
+let re = /O[0-9][0-9]/;
 function isOMSCS(row) {
     if (row.children[5].textContent != "O") {
-        console.log(`wrong campus: ${row.children[8].textContent}`);
-        // wrong campus
         return false;
     }
-    let re = /O[0-9][0-9]/;
     if (!re.exec(row.children[4].textContent)) {
-        console.log(`section no match: ${row.children[8].textContent}`)
-        // section doesn't match
         return false;
     }
     return true;
@@ -24,7 +20,7 @@ function iterateTable(table) {
 }
 
 function cleanPage() {
-    console.log("working");
+    document.getElementsByClassName("pic")[0].setAttribute("style", "display:none");
     let table = document.getElementsByClassName('datadisplaytable')[0];
     let tableBody = table.children[1];
     let rows = tableBody.children;
