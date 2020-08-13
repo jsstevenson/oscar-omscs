@@ -6,7 +6,7 @@ Tool for hiding unnecessary content in OSCAR interface for OMSCS students.
 
 In the future, you should be able to install directly via the Firefox extension interface.
 
-For now
+For now, you can use this extension by [loading it locally](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/). For now, you can clone this repository, navigate to `about:debugging` in Firefox, click "This Firefox" on the left, select "Load Temporary Add-on", and navigate to the repo, selecting any file within the extension directory. You should then see an ugly yellow "O" icon on your browser toolbar.
 
 ## Instructions
 
