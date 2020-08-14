@@ -1,1 +1,4 @@
 .git
+.DS_Store
+docs/.DS_Store
+web-ext-artifacts
