@@ -1,7 +1,7 @@
-/* TODO:
- * Figure out how to load JSON from a file so I don't have to
+/* Historical course data/misc info/etc
+ * * Pulling historical records from // https://imgur.com/user/pikatchum
+ * TODO: Figure out how to load JSON from a file so I don't have to
  * dump it up here in the ugliest way possible. thank god for code folding
- * Pulling historical records from // https://imgur.com/user/pikatchum
  */
 let data = {
     "cse-6220-01": {
@@ -128,7 +128,11 @@ let data = {
     }
 }
 
+// idk how regex works in js but i'm putting this up here in case it needs to compile every time
 let re = /O[0-9][0-9]/;
+
+/* Checks if provided row (<tr> element) is an OMSCS course or not
+ */
 function isOMSCS(row) {
     if (row.children[5].textContent != "O") {
         return false;
@@ -139,6 +143,8 @@ function isOMSCS(row) {
     return true;
 }
 
+/* Add color to course registration numbers
+ */
 function colorRow(row) {
     let act = parseInt(row.children[12].textContent);
     let cap = parseInt(row.children[11].textContent);
@@ -164,26 +170,32 @@ function colorRow(row) {
     }
 }
 
-function iterateTable(table) {
-    for (i = 0; i < table.length; i++) {
-        if ((table[i].children.length > 0) && (table[i].children[0].classList.length > 0) && (table[i].children[0].classList[0] === "dddefault")) {
-            if (!isOMSCS(table[i])) {
-                table[i].setAttribute("style", "display:none");
+/* Walk through the table and perform necessary actions on each row
+ *  * Hide non-OMSCS classes
+ *  * Style OMSCS course rows
+ */
+function iterateTable(rows) {
+    Array.from(rows).forEach(row => {
+        if ((row.children.length > 0) && (row.children[0].classList.length > 0) && (row.children[0].classList[0] === "dddefault")) {
+            if (!isOMSCS(row)) {
+                row.setAttribute("style", "display:none");
             } else {
-                colorRow(table[i]);
-                let courseName = `${table[i].children[2].textContent}-${table[i].children[3].textContent}-${table[i].children[4].textContent.slice(-2)}`.toLowerCase();
-                table[i].id = courseName;
+                colorRow(row);
+                let courseName = `${row.children[2].textContent}-${row.children[3].textContent}-${row.children[4].textContent.slice(-2)}`.toLowerCase();
+                row.id = courseName;
             }
         }
-        // clear out unnecessary columns
-        if (table[i].children.length > 19) {
-            [4, 5, 6, 7, 9, 10, 18, 19].forEach(j => {
-                table[i].children[j].setAttribute("style", "display:none");
+        if (row.children.length > 19) {
+            [4, 5, 6, 7, 9, 10, 18, 19].forEach(i => {
+                row.children[i].setAttribute("style", "display:none");
             })
         }
-    };
+    });
 }
 
+/* Hide the registration instructions section by default and generate
+ * toggle button to show them
+ */
 function hideInstructions() {
     let hidden = false;
     let infoDiv = document.getElementsByClassName("infotextdiv")[0];
@@ -191,12 +203,10 @@ function hideInstructions() {
 
     function toggleInstructions() {
         if (hidden) {
-            // show it
             hidden = false;
             infoDiv.setAttribute("style", "display:visible");
             button.textContent = "Hide registration instructions";
         } else {
-            // hide it
             hidden = true;
             infoDiv.setAttribute("style", "display:none");
             button.textContent = "Show registration instructions";
@@ -210,10 +220,13 @@ function hideInstructions() {
     button.addEventListener("click", toggleInstructions);
 }
 
+/* Add history sections - generates extra rows w/ enrollment history +
+ * toggle buttons to show/hide.
+ * rows: HTMLCollection of <tr> elements
+ * TODO: figure out how to load that JSON file instead of dumping it up top here
+ */
 function addHistory(rows) {
     let courses = Object.keys(data);
-    console.log(courses);
-    // add history rows
     courses.map(course => {
         let oldRow = document.getElementById(course);
         if (oldRow) {
@@ -278,6 +291,10 @@ function addHistory(rows) {
     });
 }
 
+/* Main container function - calls subroutines
+ * Shouldn't return anything
+ *
+ */
 function cleanPage() {
     hideInstructions();
     let rows = document.getElementsByClassName("datadisplaytable")[0].children[1].children;
