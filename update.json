@@ -1,13 +1,12 @@
 {
-    "addons": {
-        "{c3b69824-e217-4637-92fe-9a8f3f9e39a8}": {
-            "updates": [
-                {
-                    "version": "0.2",
-                    "update-link": "https://github.com/jsstevenson/oscar-omscs/"
-
-                }
-            ]
+  "addons": {
+    "{c3b69824-e217-4637-92fe-9a8f3f9e39a8}": {
+      "updates": [
+        {
+          "version": "0.2",
+          "update-link": "https://github.com/jsstevenson/oscar-omscs/"
         }
+      ]
     }
+  }
 }
