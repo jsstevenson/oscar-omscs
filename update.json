@@ -5,6 +5,10 @@
         {
           "version": "0.2",
           "update-link": "https://github.com/jsstevenson/oscar-omscs/blob/master/extension-files/oscar_clean-0.2-fx.xpi?raw=true"
+        },
+        {
+            "version": "0.21",
+            "update-link": "https://github.com/jsstevenson/oscar-omscs/blob/master/extension-files/oscar_clean-0.21-fx.xpi?raw=true"
         }
       ]
     }
