@@ -4,6 +4,16 @@ Hides all non-OMSCS classes in [OSCAR](https://oscar.gatech.edu/pls/bprod/twbkwb
 
 ## Version history
 
+### v0.3
+
+- Add ECE 8843
+- Fix handling of new courses
+- Fix add-on updating
+
+### v0.21
+
+- Icons made slightly less ugly
+
 ### v0.2
 
 - Basic color coding by seat availability
@@ -17,13 +27,19 @@ Hides all non-OMSCS classes in [OSCAR](https://oscar.gatech.edu/pls/bprod/twbkwb
 
 ## Installation
 
-In the future, you should be able to install directly via the Firefox extension interface.
+You'll need to download and install the extension file yourself. All versions are hosted in the `extension-files` directory, or you can download them directly:
 
-For now, you can use this extension by [loading it locally](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/). Create a local clone of the repository, navigate to `about:debugging` in Firefox, click "This Firefox" on the left, select "Load Temporary Add-on", and navigate to the repo, selecting any file within the extension directory. You should then see an ugly yellow "O" icon on your browser toolbar.
+```bash
+curl -O https://github.com/jsstevenson/oscar-omscs/blob/master/extension-files/oscar_clean-0.21-fx.xpi?raw=true
+```
+
+Then, navigate in Firefox to `about:addons` (or pull up the add-ons page from the toolbar), click the gear icon, and select `Install add-ons from file...`. Open the .xpi file through that prompt.
+
+You should then see a yellow "O" icon in your toolbar. I recommend customizing your toolbar and moving it out of view.
 
 ## Usage
 
-Within the OSCAR interface, click on "Look Up Classes" and then click on "Advanced Search". Select all subjects (departments) of interest - for OMSCS students, this would be, at most, "Computational Science & Engr", "Computer Science", "Industrial & Systems Engr", and "Public Policy". Click the "Section Search" button (no need to select "Online" for Campus). You should arrive at this page:
+Within the OSCAR interface, click on "Look Up Classes" and then click on "Advanced Search". Select all subjects (departments) of interest - for OMSCS students, this would be, at most, "Computational Science & Engr", "Computer Science",  "Electrical & Computer Engr", "Industrial & Systems Engr", and "Public Policy". Click the "Section Search" button (no need to select "Online" for Campus). You should arrive at this page:
 
 ![screenshot of oscar course lookup listing](/docs/oscar-screenshot1.png?raw=true)
 
