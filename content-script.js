@@ -284,6 +284,7 @@ let data = {
       "Spring 2020": [100, 48],
     },
   },
+  "ece-8843-01": {},
 };
 
 // idk how regex works in js but i'm putting this up here in case it needs to compile every time
@@ -347,7 +348,7 @@ function iterateTable(rows) {
           row.children[3].textContent
         }-${row.children[4].textContent.slice(-2)}`.toLowerCase();
         row.id = courseName;
-        if (data[courseName]["url"]) {
+        if (data[courseName] && data[courseName]["url"]) {
           let link = document.createElement("a");
           link.href = data[courseName]["url"];
           link.textContent = row.children[8].textContent;
