@@ -6,7 +6,7 @@ Hides all non-OMSCS classes in [OSCAR](https://oscar.gatech.edu/pls/bprod/twbkwb
 
 ### v0.3
 
-- Add ECE 8843
+- Add new courses for Spring 2021
 - Fix handling of new courses
 - Fix add-on updating
 
